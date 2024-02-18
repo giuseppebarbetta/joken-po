@@ -1,5 +1,11 @@
 const result = document.querySelector(".result")
 
+const GAME_OPTIONS = {
+    ROCK: 'rock',
+    PAPER: 'paper',
+    SCISSORS: 'scissors'
+}
+
 const playerScore = document.querySelector("#player-score")
 const machineScore = document.querySelector("#machine-score")
 let playerPoints = 0
@@ -14,19 +20,26 @@ const clickPlayer = (ev) => {
 }
 
 const clickMachine =  () => {
-    const choices = ["rock", "paper", "scissors"]
+    const choices = [GAME_OPTIONS.ROCK, GAME_OPTIONS.PAPER, GAME_OPTIONS.SCISSORS]
     const randomChoice = Math.floor(Math.random() * 3)
     return choices[randomChoice]
 }
 
 const playingGame = (player, machine) => {
 
+    animationMachine(machine)
+
+    setTimeout(() => {
+        winnerGame(player, machine)
+    }, 1800);
+}
+
+const animationMachine = (machine) => {
     if (machine == rockBtn.value) {
         setTimeout(() => {
             rockBtn.classList.add("selected")
         }, 800);
     } else if (machine == paperBtn.value) {
-        console.log("olá paper")
         setTimeout(() => {
             paperBtn.classList.add("selected")
         }, 800);
@@ -41,19 +54,15 @@ const playingGame = (player, machine) => {
         paperBtn.classList.remove("selected")
         scissorsBtn.classList.remove("selected")
     }, 1700);
-
-    setTimeout(() => {
-        winnerGame(player, machine)
-    }, 1800);
 }
 
 const winnerGame = (player, machine) => {
     if(player == machine) {
         result.innerText = "Empate!"
     } else if (
-        (player == "paper" && machine == "rock") ||
-        (player == "rock" && machine == "scissors") ||
-        (player == "scissors" && machine == "paper")) {
+        (player == GAME_OPTIONS.PAPER && machine == GAME_OPTIONS.ROCK) ||
+        (player == GAME_OPTIONS.ROCK && machine == GAME_OPTIONS.SCISSORS) ||
+        (player == GAME_OPTIONS.SCISSORS && machine == GAME_OPTIONS.PAPER)) {
             result.innerText = "Você venceu!"
             playerPoints++
             playerScore.innerText = playerPoints

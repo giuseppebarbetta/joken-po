@@ -47,7 +47,7 @@ button:hover {
 
 .selected {
     opacity: 1;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .rock {
@@ -79,7 +79,7 @@ p {
 .player-score span {
     color: rgb(57, 107, 214);
     font-size: 22px;
-    border: 1px solid black;
+    border: 2px solid rgb(57, 107, 214);
     background-color:  ghostwhite;
     border-radius: 5px;
     padding: 0 5px;
@@ -87,7 +87,7 @@ p {
 .machine-score span {
     color: rgb(199, 38, 38);
     font-size: 22px;
-    border: 1px solid black;
+    border: 2px solid rgb(199, 38, 38);
     background-color:  ghostwhite;
     border-radius: 5px;
     padding: 0 5px;
