@@ -33,7 +33,7 @@ main {
 .rock, .paper, .scissors {
     padding: 26px 10px;
     font-size: 62px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 10px;
     cursor: pointer;
     opacity: .8;
@@ -42,7 +42,7 @@ main {
 
 button:hover {
     opacity: 1;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .selected {
