@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JokenPo (Pedra, Papel e Tesoura)</title>
+</head>
+<body>
+    <main>
+        <h1>JokenPo</h1>
+        <section class="buttons">
+            <button class="rock" onclick="clickPlayer('rock')" value="rock">&#x1F44A;</button>
+            <button class="paper" onclick="clickPlayer('paper')" value="paper">&#x1f590;</button>
+            <button class="scissors" onclick="clickPlayer('scissors')" value="scissors">&#x270c;</button>
+        </section>
+        <h3 class="result"></h3>
+        <h2>Pontuação: </h2>
+        <section class="scores">
+            <p class="player-score">Você: <span id="player-score">0</span></p>
+            <p class="machine-score">Máquina: <span id="machine-score">0</span></p>
+    </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
