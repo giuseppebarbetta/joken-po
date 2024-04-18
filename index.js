@@ -16,7 +16,10 @@ const paperBtn = document.querySelector(".paper")
 const scissorsBtn = document.querySelector(".scissors")
 
 const clickPlayer = (ev) => {
-    playingGame(ev, clickMachine()) 
+    animationPlayer(ev)
+    setTimeout(() => {
+        playingGame(ev, clickMachine())
+    }, 1000)
 }
 
 const clickMachine =  () => {
@@ -26,7 +29,6 @@ const clickMachine =  () => {
 }
 
 const playingGame = (player, machine) => {
-
     animationMachine(machine)
 
     setTimeout(() => {
@@ -34,26 +36,48 @@ const playingGame = (player, machine) => {
     }, 1800);
 }
 
-const animationMachine = (machine) => {
-    if (machine == rockBtn.value) {
+const animationPlayer = (player) => {
+    if (player == rockBtn.value) {
         setTimeout(() => {
             rockBtn.classList.add("selected")
-        }, 800);
-    } else if (machine == paperBtn.value) {
+        }, 100);
+    } else if (player == paperBtn.value) {
         setTimeout(() => {
             paperBtn.classList.add("selected")
-        }, 800);
-    } else if (machine == scissorsBtn.value) {
+        }, 100);
+    } else if (player == scissorsBtn.value) {
         setTimeout(() => {
             scissorsBtn.classList.add("selected")
-        }, 800);
+        }, 100);
     } else {
     }
     setTimeout(() => {
         rockBtn.classList.remove("selected")
         paperBtn.classList.remove("selected")
         scissorsBtn.classList.remove("selected")
-    }, 1700);
+    }, 800);
+}
+
+const animationMachine = (machine) => {
+    if (machine == rockBtn.value) {
+        setTimeout(() => {
+            rockBtn.classList.add("selected-machine")
+        }, 500);
+    } else if (machine == paperBtn.value) {
+        setTimeout(() => {
+            paperBtn.classList.add("selected-machine")
+        }, 500);
+    } else if (machine == scissorsBtn.value) {
+        setTimeout(() => {
+            scissorsBtn.classList.add("selected-machine")
+        }, 500);
+    } else {
+    }
+    setTimeout(() => {
+        rockBtn.classList.remove("selected-machine")
+        paperBtn.classList.remove("selected-machine")
+        scissorsBtn.classList.remove("selected-machine")
+    }, 1300);
 }
 
 const winnerGame = (player, machine) => {
@@ -67,7 +91,7 @@ const winnerGame = (player, machine) => {
             playerPoints++
             playerScore.innerText = playerPoints
     } else {
-        result.innerText = "A máquina venceu!"
+        result.innerText = "A máquina venceu! 😑"
         machinePoints++
         machineScore.innerText = machinePoints
     }
