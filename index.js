@@ -87,7 +87,7 @@ const winnerGame = (player, machine) => {
         (player == GAME_OPTIONS.PAPER && machine == GAME_OPTIONS.ROCK) ||
         (player == GAME_OPTIONS.ROCK && machine == GAME_OPTIONS.SCISSORS) ||
         (player == GAME_OPTIONS.SCISSORS && machine == GAME_OPTIONS.PAPER)) {
-            result.innerText = "Você venceu!"
+            result.innerText = "Você venceu! 🎉"
             playerPoints++
             playerScore.innerText = playerPoints
     } else {
