@@ -54,7 +54,6 @@
   ├── style.css
   ├── index.js
   └── assets/
-      └── wecare.png
   </pre>
   <br>
   <h2>Contribuindo</h2>
